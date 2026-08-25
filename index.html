@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1st Anniversary, Mahal! 💕</title>
+  
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Plus+Jakarta+Sans:wght@400;600;800&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Glowing Trail Effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Parallax Background Stars & Floating Hearts -->
+  <div id="parallaxBg" class="parallax"></div>
+  <div id="heartsContainer"></div>
+
+  <!-- ROMANTIC ENVELOPE INTRO SCREEN -->
+  <div id="introScreen">
+    <div class="intro-card-glass">
+      <div class="envelope-wrapper" onclick="openGift()">
+        <div class="envelope">
+          <div class="envelope-paper">
+            <span class="paper-text">For My Favorite Person 💖</span>
+          </div>
+          <div class="wax-seal">💌</div>
+        </div>
+      </div>
+      <h2 class="glow-title">Happy 1st Anniversary, Mahal!</h2>
+      <p class="tap-hint">Pindutin mo 'yung sobre para buksan ang regalo ko sa'yo ✨</p>
+    </div>
+  </div>
+
+  <!-- Main Website Content -->
+  <div class="main-content" id="mainContent">
+    <div class="container">
+      
+      <!-- Hero Header -->
+      <header class="hero-header reveal">
+        <div class="badge-pill">🌸 OUR 1ST ANNIVERSARY EDITION 🌸</div>
+        <h1 class="sparkle-title">365 Days With You, Mahal 💕</h1>
+        <p class="subtitle">1 year na tayo! Sobrang thankful at swerte ko sa'yo ✨</p>
+        
+        <!-- Days Counter Badge -->
+        <div class="counter-box">
+          <div class="counter-item">
+            <span class="count-num">365</span>
+            <span class="count-label">Days</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-item">
+            <span class="count-num">8,760</span>
+            <span class="count-label">Hours</span>
+          </div>
+          <div class="counter-divider">•</div>
+          <div class="counter-item">
+            <span class="count-num">∞</span>
+            <span class="count-label">Love</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Part 1: Your Letter -->
+      <div class="glass-card letter-card reveal">
+        <div class="card-glow-tag">CHAPTER 01</div>
+        <h2>From Bumble to Forever 📱❤️</h2>
+        <p class="letter-text">
+          Mahal, Happy 1st Anniversary sa'tin! Sobrang thankful ko sa'yo at sobrang swerte ko sa'yo. Napakasweet mo and minsan tinotopak pero mahal na mahal pa rin kita hehe!
+        </p>
+        <p class="letter-text">
+          Parang kailan lang no? Isang taon na tayo—from Bumble to Instagram then ayon nagtuloy-tuloy na. Dahil sa'yo mahal, may nabuksan ka na 'di ko alam na meron pala akong ganon. Natuto akong mag-open nang buo nang walang hirap, and mas lalo akong naging better as a person.
+        </p>
+      </div>
+
+      <!-- Photo Collection 1 -->
+      <div class="glass-card reveal">
+        <div class="section-badge">COLLECTION 01</div>
+        <h2>Our Bumble Beginnings 📸</h2>
+        <p class="gallery-subtext">Tap any picture to zoom in & view details, By!</p>
+        <div class="tilt-grid" id="gridPart1"></div>
+      </div>
+
+      <!-- Part 2: Your Letter -->
+      <div class="glass-card letter-card reveal">
+        <div class="card-glow-tag">CHAPTER 02</div>
+        <h2>Always Here For You, By 🤝✨</h2>
+        <p class="letter-text">
+          Onto the next tayo syempre, By! Marami pa tayong journey as a couple na tatahakin. We have each other naman thru ups and downs, alam mo naman na andito lang ako palagi para sa'yo—handa makinig sa lahat ng kwento mo, rants mo, at sama ng loob. Of course, I'm your shoulder to cry on.
+        </p>
+        <p class="letter-text">
+          Excited na ako sa mga magagawa pa natin this coming months. Hinding-hindi ako magsasawang mahalin ka palagi.
+        </p>
+      </div>
+
+      <!-- Photo Collection 2 -->
+      <div class="glass-card reveal">
+        <div class="section-badge">COLLECTION 02</div>
+        <h2>More Moments With You 🥰</h2>
+        <p class="gallery-subtext">Our sweet visual diary ✨</p>
+        <div class="tilt-grid" id="gridPart2"></div>
+      </div>
+
+      <!-- Part 3: Your Letter -->
+      <div class="glass-card letter-card transition-card reveal">
+        <div class="card-glow-tag">CHAPTER 03</div>
+        <h2>Kaya Natin 'To Together 💪❤️</h2>
+        <p class="letter-text">
+          I just want to say na I love you so much, Mahal! I know na these are tough times sa phase ng buhay natin, pero kaya natin 'to malagpasan 'di ba? Wala 'to sa'tin e, matatag tayo dahil meron tayong isa't isa.
+        </p>
+        <p class="letter-text">
+          Alam ko may mga pagkukulang ako mahal na pwede ko maayos, sabihin mo sakin ha? Gusto ko mas maging open tayo and maging mabuting partner para sa'yo.
+        </p>
+      </div>
+
+      <!-- OUR GOALS THIS YEAR BUCKET LIST -->
+      <div class="glass-card reveal bucket-card">
+        <div class="section-badge">OUR GOALS THIS YEAR</div>
+        <h2>Mga Goals Natin Na Gagawin This Year 📝💖</h2>
+        <p class="gallery-subtext">Tap a goal whenever we achieve it this year, By!</p>
+
+        <div class="bucket-list-exact">
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> photo booth📷</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> road trip sa malayo🚗</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> fine dinning (wow)😲*:*✨</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> beach trip🏊‍♂️🏝️</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> nature trip🥦🥦</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> camping trip🎆*:*✨</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> sakay ng airplane wiiiee✈️🛫</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> gala with lokii pogiii boi🐶</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> gala with owshie bb🐶</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> staycation witwiww🙈🔞</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> mag karaoke hehe🎤*:*✨</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> nuod concert tugederr🎫*:*✨</div>
+          <div class="bucket-row" onclick="toggleBucket(this)"><span class="status-icon">⭕</span> theme park date🎡🎡</div>
+        </div>
+      </div>
+
+      <!-- Photo Collection 3 -->
+      <div class="glass-card reveal">
+        <div class="section-badge">COLLECTION 03</div>
+        <h2>60 Reasons Why I Love You 💖</h2>
+        <p class="gallery-subtext">Our memory timeline 🎞️</p>
+        <div class="tilt-grid" id="gridPart3"></div>
+      </div>
+
+      <!-- Teacher Outfit Photo (Mahal ko 1) - Grand Finale Card -->
+      <div class="glass-card finale-card reveal">
+        <div class="year-tag">GRAND FINALE PHOTO 👩‍🏫✨</div>
+        <h2>My Favorite Teacher & Partner</h2>
+        <div class="polaroid-frame" onclick="createHeartBurst(event)">
+          <div class="polaroid-inner">
+            <img id="mainPhoto" src="images/Mahal ko  (1).jpg" alt="Mahal ko Teacher Outfit" onclick="openModal(this.src)" onerror="tryLoadImage(this, 1)">
+            <div class="shimmer-effect"></div>
+          </div>
+          <div class="polaroid-caption">Mahal ko (1) — You take my breath away! 😍</div>
+        </div>
+        <p class="caption-text">
+          Sobrang ganda mo rito, Mahal! My absolute favorite view hands down. 😍
+        </p>
+      </div>
+
+      <!-- Secret Box Screen -->
+      <div class="glass-card secret-box reveal">
+        <h2>May Pop-up Surprise Ako 🎁</h2>
+        <button class="secret-btn" id="confettiBtn" onclick="toggleSecret()">Pindutin mo 'to By!</button>
+        <div id="secretMessage">
+          <h3>I Love You So Much, Mahal!</h3>
+          <p>Happy 1st Anniversary uli sa atin! Dito lang ako palagi para sa'yo. ❤️</p>
+        </div>
+      </div>
+
+      <footer>
+        Gawa 'to ng boyfriend mong mahal na mahal ka! 😘
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Image Modal Lightbox -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="Zoomed view">
+      <span class="close-btn">&times;</span>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
