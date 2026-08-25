@@ -50,7 +50,7 @@ function playPopSound() {
   }
 }
 
-// Load All 60 Photos into Beautiful 3D Cards
+// Load All 60 Photos
 document.addEventListener("DOMContentLoaded", () => {
   const grid1 = document.getElementById('gridPart1');
   const grid2 = document.getElementById('gridPart2');
@@ -75,14 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   setupScrollReveal();
+  setupModalImageHearts();
 });
 
 function createPhotoCardHTML(num) {
   return `
-    <div class="tilt-card">
+    <div class="tilt-card" onclick="openModal('images/Mahal ko  (${num}).JPG')">
       <img src="images/Mahal ko  (${num}).JPG" 
            alt="Mahal ko (${num})"
-           onclick="openModal(this.src)"
            onerror="tryLoadImage(this, ${num})">
     </div>
   `;
@@ -161,34 +161,47 @@ function createHeart() {
 }
 setInterval(createHeart, 500);
 
-// Interactive Heart Burst Effect
-function createHeartBurst(event) {
+// === DIRECT HEART TAP ON ZOOMED IMAGE ===
+function setupModalImageHearts() {
+  const modalImg = document.getElementById('modalImg');
+  
+  if (modalImg) {
+    modalImg.addEventListener('click', (e) => {
+      // Huwag i-close ang modal pag picture ang tinap
+      e.stopPropagation(); 
+      createHeartBurstAtPoint(e.clientX, e.clientY);
+    });
+  }
+}
+
+function createHeartBurstAtPoint(x, y) {
   playPopSound();
+  
   for (let i = 0; i < 12; i++) {
     const heart = document.createElement('div');
     heart.innerHTML = '💖';
     heart.style.position = 'fixed';
-    heart.style.left = event.clientX + 'px';
-    heart.style.top = event.clientY + 'px';
-    heart.style.fontSize = '28px';
+    heart.style.left = x + 'px';
+    heart.style.top = y + 'px';
+    heart.style.fontSize = Math.floor(Math.random() * 14 + 22) + 'px';
     heart.style.pointerEvents = 'none';
     heart.style.zIndex = '30000';
     
-    const x = (Math.random() - 0.5) * 300;
-    const y = (Math.random() - 0.5) * 300;
+    const xMove = (Math.random() - 0.5) * 300;
+    const yMove = (Math.random() - 0.5) * 300;
     
     document.body.appendChild(heart);
     
     heart.animate([
-      { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-      { transform: `translate(${x}px, ${y}px) scale(1.8)`, opacity: 0 }
+      { transform: 'translate(0, 0) scale(0.6)', opacity: 1 },
+      { transform: `translate(${xMove}px, ${yMove}px) scale(1.8)`, opacity: 0 }
     ], {
-      duration: 1200,
+      duration: 1000,
       easing: 'ease-out',
       fill: 'forwards'
     });
     
-    setTimeout(() => heart.remove(), 1200);
+    setTimeout(() => heart.remove(), 1000);
   }
 }
 
@@ -253,6 +266,9 @@ function openModal(src) {
   if (modal && modalImg) {
     modal.style.display = 'flex';
     modalImg.src = src;
+    
+    // Auto burst pagkabukas
+    createHeartBurstAtPoint(window.innerWidth / 2, window.innerHeight / 2);
   }
 }
 

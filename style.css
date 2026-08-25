@@ -500,21 +500,24 @@ h2 {
   100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
 }
 
+/* LIGHTBOX MODAL FIX */
 .modal {
   display: none;
   position: fixed;
   z-index: 20000;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.88);
+  backdrop-filter: blur(12px);
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .modal-content {
   position: relative;
   max-width: 90%;
   max-height: 85%;
+  pointer-events: auto;
 }
 
 .modal img {
@@ -522,17 +525,18 @@ h2 {
   height: auto;
   max-height: 85vh;
   border-radius: 20px;
-  box-shadow: 0 0 50px rgba(255, 92, 138, 0.5);
+  box-shadow: 0 0 50px rgba(255, 92, 138, 0.6);
   border: 3px solid white;
 }
 
 .close-btn {
   position: absolute;
-  top: -40px; right: -10px;
+  top: -45px; right: 0px;
   color: white;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  z-index: 25000;
 }
 
 footer {
